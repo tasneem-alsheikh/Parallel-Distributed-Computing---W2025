@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     # Multiprocessing Sum
     start_time = time.time()
-    total_process = multiprocessing_sum(N, num_processes=4)
+    total_process = multiprocessing_sum(N, num_processes=8)  # Try 8 processes
     time_process = time.time() - start_time
     print(f"Multiprocessing Sum: {total_process}, Time: {time_process:.5f}s")
 
