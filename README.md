@@ -16,7 +16,7 @@ This is a Python program designed to simulate a temperature monitoring system. T
 
 1. Clone the repository to your local machine:
     ```bash
-    git clone <repo-url>
+    git clone git@github.com:tasneem-alsheikh/Parallel-Distributed-Computing---W2025.git
     cd lab4
     ```
 
