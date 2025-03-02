@@ -1,95 +1,86 @@
-# Brain Tumor Detection Using Parallel Processing
+# README: mpi4py for Parallel and Distributed Computing
 
-## Project Overview
-This project implements a machine learning system for detecting brain tumors from MRI images. The implementation leverages parallel processing techniques to efficiently handle the computationally intensive tasks of image processing and model training.
+## Overview
+This lecture introduces mpi4py, a Python package that provides bindings to the Message Passing Interface (MPI) standard for parallel and distributed computing. It focuses on how mpi4py can be used to develop parallel applications and distribute computing tasks across multiple nodes. The MPI model enables efficient communication between processes, making it suitable for high-performance computing (HPC) environments.
 
-## Dataset
-The dataset consists of MRI brain scans categorized into two classes:
-- **Positive Cases**: Images containing brain tumors (in the 'yes' directory)
-- **Negative Cases**: Images without brain tumors (in the 'no' directory)
+## Key Concepts
 
-## Implementation Approach
+### What is mpi4py?
+- mpi4py is a Python library that allows Python programs to utilize the MPI standard, which is widely used for parallel computing in high-performance computing (HPC) environments.
+- It enables efficient inter-process communication, allowing for the distribution of workloads across multiple nodes in a computing cluster.
+- While primarily designed for parallel computing, mpi4py is also used in distributed computing for large-scale data processing and computation tasks.
 
-### 1. Image Processing Pipeline
-The system processes MRI images through the following steps:
-- **Loading**: Images are read using OpenCV in grayscale format
-- **Filtering**: Multiple filters are applied to enhance features:
-  - Entropy Filter: Measures randomness, highlighting information-rich regions
-  - Gaussian Filter: Smooths the image to reduce noise
-  - Sobel Filter: Detects edges by highlighting gradients
-  - Gabor Filter: Analyzes texture patterns
-  - Hessian Filter: Enhances blob-like structures
-  - Prewitt Filter: Edge detection with different kernel values
+### mpi4py for Distributed Computing
+- mpi4py facilitates the distribution of workloads across multiple nodes for efficient execution of large-scale computations and data processing.
+- It enables communication between processes, but in a tightly coupled manner, which is a feature of parallel computing rather than purely distributed systems.
 
-### 2. Parallel Processing Implementation
-Two main components were parallelized:
+### How it Works
+- **Single Program, Multiple Data (SPMD)**: All processes run the same program but can perform different operations depending on their rank or process ID.
+- **Communication**: MPI supports both synchronous and asynchronous communication patterns, including point-to-point and collective operations.
+- **High-level Interface**: mpi4py provides a high-level interface for Python to communicate with the underlying MPI implementation for parallel computation.
 
-#### Image Filtering
-- Implemented multiprocessing with Python's `multiprocessing.Pool`
-- Distributed filter application across multiple CPU cores
-- Achieved a 38.9x speedup compared to sequential processing (242.7s → 6.2s)
+## Example Code
 
-#### Feature Extraction
-- Parallelized GLCM (Gray Level Co-occurrence Matrix) feature extraction
-- Used the `joblib` library for efficient parallel execution
-- Reduced feature extraction time significantly (0.9s vs sequential)
+```python
+from mpi4py import MPI
 
-### 3. Machine Learning Model
-The system includes three different classifier models:
-- **Random Forest**: Ensemble learning method
-- **Support Vector Machine**: With linear kernel
-- **Logistic Regression**: For binary classification
+# Get the communication world and rank of each process
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
 
-All models were trained and evaluated in parallel using Leave-One-Out cross-validation.
+# Process 0 sends data to process 1
+if rank == 0:
+    data = {'a': 7, 'b': 3.14}
+    comm.send(data, dest=1, tag=11)
 
-## Key Features
-- **High Performance**: Leverages multicore processing for significant speedup
-- **Feature Engineering**: Extracts GLCM texture features (contrast, homogeneity, energy, correlation, etc.)
-- **Feature Selection**: Uses SelectKBest to identify most predictive features
-- **Model Evaluation**: Employs Leave-One-Out cross-validation for robust performance assessment
+# Process 1 receives data from process 0 and prints it
+elif rank == 1:
+    data = comm.recv(source=0, tag=11)
+    print('On process 1, data received:', data)
+```
 
-## Results
-- **Parallel Processing**: Achieved 38.9x speedup in image filtering
-- **Classification Performance**: Models achieved high accuracy in tumor detection
-- **Memory Efficiency**: Optimized resource usage for handling large datasets
+## Major Components and Methods
 
-## Dependencies
-- Python 3.x
-- OpenCV (`opencv-python`)
-- scikit-image
-- scikit-learn
-- NumPy
-- Pandas
-- SciPy
-- matplotlib
-- seaborn
-- joblib (for parallelization)
+### MPI.Request (Non-blocking Operations)
+- MPI.Request is an object returned by non-blocking send and receive operations, such as isend() and irecv().
+- It allows checking the status of non-blocking operations or waiting for their completion without halting the program.
 
-## Usage
-1. Ensure all dependencies are installed:
-   ```
-   pip install opencv-python scikit-image matplotlib tqdm seaborn pandas scikit-learn joblib
-   ```
+Example:
 
-2. Place your MRI images in the following structure:
-   ```
-   data/brain_tumor_dataset/
-   ├── yes/  (tumor images)
-   └── no/   (non-tumor images)
-   ```
+```python
+from mpi4py import MPI
 
-3. Run the main notebook to execute the entire pipeline:
-   - Image loading
-   - Parallel filtering
-   - Feature extraction
-   - Model training and evaluation
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
 
-## Performance Considerations
-- The optimal number of processes varies based on CPU cores available
-- Memory usage increases with the number of processes
-- For very large datasets, consider batch processing to avoid memory issues
+if rank == 0:
+    data_to_send = "Hello from Process 0"
+    request = comm.isend(data_to_send, dest=1, tag=100)
+    request.wait()  # Wait for the non-blocking send to complete
+    print("Process 0 sent data")
 
-## Future Improvements
-- Implementation of GPU acceleration for image processing
-- Hyperparameter optimization with parallel grid search
-- Integration of deep learning models for end-to-end tumor detection
+elif rank == 1:
+    request = comm.irecv(source=0, tag=100)
+    data_received = request.wait()  # Wait for the non-blocking receive to complete
+    status = request.Get_status()  # Get status of the message
+    print("Process 1 received data:", data_received)
+    print("Status of the received message:", status)
+```
+
+### MPI.Status
+- MPI.Status provides details about a received message, such as the source, tag, and error status.
+- It is used with wait() and Get_status() to inspect the message after a non-blocking operation has completed.
+
+### Common Methods in mpi4py
+- **comm.send(), comm.recv()**: For sending and receiving messages.
+- **comm.bcast(), comm.scatter(), comm.gather()**: For collective communication among processes.
+- **comm.barrier()**: Synchronization barrier to coordinate all processes in a program.
+
+### irecv vs. recv
+- **recv**: A blocking receive operation. The process waits until the message is received, which can lead to inefficiency if the process can do other work during that time.
+- **irecv**: A non-blocking receive operation. The process immediately gets an MPI.Request object and can continue executing other code while the message is received. It later checks the status of the operation using wait().
+
+## Summary
+- mpi4py is a powerful library for implementing parallel and distributed computing in Python using the MPI standard.
+- It provides high-level methods for efficient inter-process communication and synchronization in parallel applications.
+- Key features include support for non-blocking operations, collective communication, and detailed message status inspection.
