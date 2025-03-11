@@ -1,5 +1,3 @@
-I'll provide that content as clean Markdown for you to copy and paste:
-
 # Parallel and Distributed Computing - MPI with mpi4py
 
 ## 📌 Overview
