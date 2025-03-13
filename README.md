@@ -1,10 +1,10 @@
 # Parallel and Distributed Computing Assignment 🚀
 
-## Project Overview 🔍
-This project evaluates various approaches for parallel computation by calculating the square of numbers using different techniques. The goal is to compare the performance of these methods on large datasets of 10^6 and 10^7 numbers.
+## Assignment Part 1 Overview 🔍
+This part evaluates various approaches for parallel computation by calculating the square of numbers using different techniques. The goal is to compare the performance of these methods on large datasets of 10^6 and 10^7 numbers.
 
 ## Test Methodology 🧪
-We implemented the following methods to compute the square of numbers from a list of random integers:
+I implemented the following methods to compute the square of numbers from a list of random integers:
 
 - **Sequential Execution**: 🐢
   - A simple for loop that computes the square for each number sequentially.
@@ -76,3 +76,7 @@ Methods like individual processes and apply() are highly inefficient for large d
 
 ### Parallel Pooling (map and map_async): 🌊
 map() offers an efficient way to parallelize tasks without introducing too much overhead. map_async() can be beneficial when tasks are I/O-bound or require non-blocking operations, but in this case, its impact was minimal.
+
+_________________________________________________________________________
+
+## Assignment Part 2 Overview 🔍
