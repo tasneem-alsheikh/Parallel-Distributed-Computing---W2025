@@ -80,3 +80,67 @@ map() offers an efficient way to parallelize tasks without introducing too much 
 _________________________________________________________________________
 
 ## Assignment Part 2 Overview 🔍
+This task demonstrates the use of semaphores in Python's `multiprocessing` module to manage access to a limited pool of resources, specifically simulating a pool of database connections. The goal is to simulate multiple processes attempting to access a shared resource (the connection pool), using a semaphore to control access and ensure safe synchronization. 🔐
+
+## Requirements 📝
+
+### 1. Connection Pool Class 🔄
+* A `ConnectionPool` class was implemented that uses a semaphore to manage access to a limited number of connections.
+* The class includes methods to:
+   * **Acquire a connection**: Process waits for and acquires a connection if available. ⏳
+   * **Release a connection**: Process releases a connection back to the pool after completing its task. 🔄
+
+### 2. Database Operation Simulation 🗃️
+* A function simulates a process performing a database operation by:
+   * Acquiring a connection. 🖥️
+   * Performing some work (simulated by a random sleep). 💤
+   * Releasing the connection after finishing the task. ✔️
+
+### 3. Multiprocessing Setup ⚙️
+* Multiple processes (5 in total) are created to simulate concurrent database access. 💼
+* The semaphore limits the number of processes that can access the pool at any given time (3 connections in this case). 🔢
+* The program prints messages indicating the state of each process (waiting, acquired, or released a connection). 🖨️
+
+## Output 📊
+When the script is executed, the output demonstrates the process behavior:
+* **Process waiting** for a connection to be available. 🕒
+* **Process acquiring** a connection once it's free. 🔓
+* **Process releasing** the connection back to the pool after finishing the task. 🔁
+
+### Full Output Example:
+
+```
+Process 61 waiting for a connection... 
+Acquired Connection-2 
+Process 61 working with Connection-2... 
+Process 64 waiting for a connection... 
+Acquired Connection-2 
+Process 64 working with Connection-2... 
+Process 79 waiting for a connection... 
+Acquired Connection-2 
+Process 79 working with Connection-2... 
+Process 17 waiting for a connection... 
+Process 29 waiting for a connection... 
+Released Connection-2 
+Process 64 finished with Connection-2 
+Acquired Connection-2 
+Process 17 working with Connection-2... 
+Released Connection-2 
+Process 79 finished with Connection-2 
+Acquired Connection-2 
+Process 29 working with Connection-2... 
+Released Connection-2 
+Process 61 finished with Connection-2 
+Released Connection-2 
+Process 17 finished with Connection-2 
+Released Connection-2 
+Process 29 finished with Connection-2
+```
+
+## Observations 👀
+
+### 1. **What happens if more processes try to access the pool than there are available connections?**
+   * Processes will wait in a queue until a connection is released by another process. Only a fixed number of processes can access the pool at the same time. 🕰️
+
+### 2. **How does the semaphore prevent race conditions and ensure safe access to the connections?**
+   * The semaphore limits the number of processes that can acquire a connection at the same time. It ensures that once the maximum number of processes is reached, additional processes must wait for a connection to be released, preventing race conditions. 🚫
