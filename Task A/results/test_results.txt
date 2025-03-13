@@ -1,0 +1,44 @@
+Task A:
+Running tests with 1000000 numbers...
+
+Sequential Execution:
+Execution time: 0.0543 seconds
+
+Multiprocessing (Individual Processes for Each Number):
+Execution time: 0.0883 seconds
+
+Multiprocessing Pool (map_sync):
+Execution time: 0.0832 seconds
+
+Multiprocessing Pool (map_async):
+Execution time: 0.0831 seconds
+
+Multiprocessing Pool (apply):
+Execution time: 161.9429 seconds
+
+Process Pool Executor:
+Execution time: 106.6540 seconds
+
+__________________________________________________________________________
+
+Running tests with 10000000 numbers...
+
+Sequential Execution:
+Execution time: 0.5159 seconds
+
+Multiprocessing (Individual Processes for Each Number):
+Execution time: 0.7827 seconds
+
+Multiprocessing Pool (map):
+Execution time: 0.7932 seconds
+
+Multiprocessing Pool (map_async):
+Execution time: 0.7806 seconds
+
+Multiprocessing Pool (apply):
+Execution time: 1676.2731 seconds
+
+Process Pool Executor:
+Execution time: 1046.5371 seconds
+
+For analysis please check the readme file :)
