@@ -1,0 +1,202 @@
+Generation 0: Best calculate_fitness = -1500890.0
+Generation 1: Best calculate_fitness = -1500890.0
+Generation 2: Best calculate_fitness = -1500890.0
+Generation 3: Best calculate_fitness = -1500890.0
+Generation 4: Best calculate_fitness = -1500890.0
+Regenerating population at generation 5 due to stagnation
+Generation 6: Best calculate_fitness = -1500999.0
+Generation 7: Best calculate_fitness = -1500999.0
+Generation 8: Best calculate_fitness = -1500999.0
+Generation 9: Best calculate_fitness = -1500999.0
+Generation 10: Best calculate_fitness = -1500999.0
+Regenerating population at generation 11 due to stagnation
+Generation 12: Best calculate_fitness = -1600885.0
+Generation 13: Best calculate_fitness = -1600885.0
+Generation 14: Best calculate_fitness = -1600885.0
+Generation 15: Best calculate_fitness = -1600885.0
+Generation 16: Best calculate_fitness = -1600885.0
+Regenerating population at generation 17 due to stagnation
+Generation 18: Best calculate_fitness = -1600885.0
+Generation 19: Best calculate_fitness = -1600885.0
+Generation 20: Best calculate_fitness = -1600885.0
+Generation 21: Best calculate_fitness = -1600885.0
+Regenerating population at generation 22 due to stagnation
+Generation 23: Best calculate_fitness = -1600885.0
+Generation 24: Best calculate_fitness = -1600885.0
+Generation 25: Best calculate_fitness = -1600885.0
+Generation 26: Best calculate_fitness = -1600885.0
+Regenerating population at generation 27 due to stagnation
+Generation 28: Best calculate_fitness = -1600956.0
+Generation 29: Best calculate_fitness = -1600956.0
+Generation 30: Best calculate_fitness = -1600956.0
+Generation 31: Best calculate_fitness = -1600956.0
+Generation 32: Best calculate_fitness = -1600956.0
+Regenerating population at generation 33 due to stagnation
+Generation 34: Best calculate_fitness = -1600956.0
+Generation 35: Best calculate_fitness = -1600956.0
+Generation 36: Best calculate_fitness = -1600956.0
+Generation 37: Best calculate_fitness = -1600956.0
+Regenerating population at generation 38 due to stagnation
+Generation 39: Best calculate_fitness = -1600956.0
+Generation 40: Best calculate_fitness = -1600956.0
+Generation 41: Best calculate_fitness = -1600956.0
+Generation 42: Best calculate_fitness = -1600956.0
+Regenerating population at generation 43 due to stagnation
+Generation 44: Best calculate_fitness = -1600956.0
+Generation 45: Best calculate_fitness = -1600956.0
+Generation 46: Best calculate_fitness = -1600956.0
+Generation 47: Best calculate_fitness = -1600956.0
+Regenerating population at generation 48 due to stagnation
+Generation 49: Best calculate_fitness = -1600956.0
+Generation 50: Best calculate_fitness = -1600956.0
+Generation 51: Best calculate_fitness = -1600956.0
+Generation 52: Best calculate_fitness = -1600956.0
+Regenerating population at generation 53 due to stagnation
+Generation 54: Best calculate_fitness = -1600956.0
+Generation 55: Best calculate_fitness = -1600956.0
+Generation 56: Best calculate_fitness = -1600956.0
+Generation 57: Best calculate_fitness = -1600956.0
+Regenerating population at generation 58 due to stagnation
+Generation 59: Best calculate_fitness = -1600956.0
+Generation 60: Best calculate_fitness = -1600956.0
+Generation 61: Best calculate_fitness = -1600956.0
+Generation 62: Best calculate_fitness = -1600956.0
+Regenerating population at generation 63 due to stagnation
+Generation 64: Best calculate_fitness = -1600956.0
+Generation 65: Best calculate_fitness = -1600956.0
+Generation 66: Best calculate_fitness = -1600956.0
+Generation 67: Best calculate_fitness = -1600956.0
+Regenerating population at generation 68 due to stagnation
+Generation 69: Best calculate_fitness = -1600956.0
+Generation 70: Best calculate_fitness = -1600956.0
+Generation 71: Best calculate_fitness = -1600956.0
+Generation 72: Best calculate_fitness = -1600956.0
+Regenerating population at generation 73 due to stagnation
+Generation 74: Best calculate_fitness = -1600956.0
+Generation 75: Best calculate_fitness = -1600956.0
+Generation 76: Best calculate_fitness = -1600956.0
+Generation 77: Best calculate_fitness = -1600956.0
+Regenerating population at generation 78 due to stagnation
+Generation 79: Best calculate_fitness = -1600956.0
+Generation 80: Best calculate_fitness = -1600956.0
+Generation 81: Best calculate_fitness = -1600956.0
+Generation 82: Best calculate_fitness = -1600956.0
+Regenerating population at generation 83 due to stagnation
+Generation 84: Best calculate_fitness = -1600956.0
+Generation 85: Best calculate_fitness = -1600956.0
+Generation 86: Best calculate_fitness = -1600956.0
+Generation 87: Best calculate_fitness = -1600956.0
+Regenerating population at generation 88 due to stagnation
+Generation 89: Best calculate_fitness = -1600956.0
+Generation 90: Best calculate_fitness = -1600956.0
+Generation 91: Best calculate_fitness = -1600956.0
+Generation 92: Best calculate_fitness = -1600956.0
+Regenerating population at generation 93 due to stagnation
+Generation 94: Best calculate_fitness = -1800547.0
+Generation 95: Best calculate_fitness = -1800547.0
+Generation 96: Best calculate_fitness = -1800547.0
+Generation 97: Best calculate_fitness = -1800547.0
+Generation 98: Best calculate_fitness = -1800547.0
+Regenerating population at generation 99 due to stagnation
+Generation 100: Best calculate_fitness = -1800547.0
+Generation 101: Best calculate_fitness = -1800547.0
+Generation 102: Best calculate_fitness = -1800547.0
+Generation 103: Best calculate_fitness = -1800547.0
+Regenerating population at generation 104 due to stagnation
+Generation 105: Best calculate_fitness = -1800547.0
+Generation 106: Best calculate_fitness = -1800547.0
+Generation 107: Best calculate_fitness = -1800547.0
+Generation 108: Best calculate_fitness = -1800547.0
+Regenerating population at generation 109 due to stagnation
+Generation 110: Best calculate_fitness = -1800547.0
+Generation 111: Best calculate_fitness = -1800547.0
+Generation 112: Best calculate_fitness = -1800547.0
+Generation 113: Best calculate_fitness = -1800547.0
+Regenerating population at generation 114 due to stagnation
+Generation 115: Best calculate_fitness = -1800547.0
+Generation 116: Best calculate_fitness = -1800547.0
+Generation 117: Best calculate_fitness = -1800547.0
+Generation 118: Best calculate_fitness = -1800547.0
+Regenerating population at generation 119 due to stagnation
+Generation 120: Best calculate_fitness = -1800547.0
+Generation 121: Best calculate_fitness = -1800547.0
+Generation 122: Best calculate_fitness = -1800547.0
+Generation 123: Best calculate_fitness = -1800547.0
+Regenerating population at generation 124 due to stagnation
+Generation 125: Best calculate_fitness = -1800547.0
+Generation 126: Best calculate_fitness = -1800547.0
+Generation 127: Best calculate_fitness = -1800547.0
+Generation 128: Best calculate_fitness = -1800547.0
+Regenerating population at generation 129 due to stagnation
+Generation 130: Best calculate_fitness = -1800547.0
+Generation 131: Best calculate_fitness = -1800547.0
+Generation 132: Best calculate_fitness = -1800547.0
+Generation 133: Best calculate_fitness = -1800547.0
+Regenerating population at generation 134 due to stagnation
+Generation 135: Best calculate_fitness = -1800547.0
+Generation 136: Best calculate_fitness = -1800547.0
+Generation 137: Best calculate_fitness = -1800547.0
+Generation 138: Best calculate_fitness = -1800547.0
+Regenerating population at generation 139 due to stagnation
+Generation 140: Best calculate_fitness = -1800547.0
+Generation 141: Best calculate_fitness = -1800547.0
+Generation 142: Best calculate_fitness = -1800547.0
+Generation 143: Best calculate_fitness = -1800547.0
+Regenerating population at generation 144 due to stagnation
+Generation 145: Best calculate_fitness = -1800547.0
+Generation 146: Best calculate_fitness = -1800547.0
+Generation 147: Best calculate_fitness = -1800547.0
+Generation 148: Best calculate_fitness = -1800547.0
+Regenerating population at generation 149 due to stagnation
+Generation 150: Best calculate_fitness = -1800547.0
+Generation 151: Best calculate_fitness = -1800547.0
+Generation 152: Best calculate_fitness = -1800547.0
+Generation 153: Best calculate_fitness = -1800547.0
+Regenerating population at generation 154 due to stagnation
+Generation 155: Best calculate_fitness = -1800547.0
+Generation 156: Best calculate_fitness = -1800547.0
+Generation 157: Best calculate_fitness = -1800547.0
+Generation 158: Best calculate_fitness = -1800547.0
+Regenerating population at generation 159 due to stagnation
+Generation 160: Best calculate_fitness = -1800547.0
+Generation 161: Best calculate_fitness = -1800547.0
+Generation 162: Best calculate_fitness = -1800547.0
+Generation 163: Best calculate_fitness = -1800547.0
+Regenerating population at generation 164 due to stagnation
+Generation 165: Best calculate_fitness = -1800547.0
+Generation 166: Best calculate_fitness = -1800547.0
+Generation 167: Best calculate_fitness = -1800547.0
+Generation 168: Best calculate_fitness = -1800547.0
+Regenerating population at generation 169 due to stagnation
+Generation 170: Best calculate_fitness = -1800547.0
+Generation 171: Best calculate_fitness = -1800547.0
+Generation 172: Best calculate_fitness = -1800547.0
+Generation 173: Best calculate_fitness = -1800547.0
+Regenerating population at generation 174 due to stagnation
+Generation 175: Best calculate_fitness = -1800547.0
+Generation 176: Best calculate_fitness = -1800547.0
+Generation 177: Best calculate_fitness = -1800547.0
+Generation 178: Best calculate_fitness = -1800547.0
+Regenerating population at generation 179 due to stagnation
+Generation 180: Best calculate_fitness = -1800547.0
+Generation 181: Best calculate_fitness = -1800547.0
+Generation 182: Best calculate_fitness = -1800547.0
+Generation 183: Best calculate_fitness = -1800547.0
+Regenerating population at generation 184 due to stagnation
+Generation 185: Best calculate_fitness = -1800547.0
+Generation 186: Best calculate_fitness = -1800547.0
+Generation 187: Best calculate_fitness = -1800547.0
+Generation 188: Best calculate_fitness = -1800547.0
+Regenerating population at generation 189 due to stagnation
+Generation 190: Best calculate_fitness = -1800547.0
+Generation 191: Best calculate_fitness = -1800547.0
+Generation 192: Best calculate_fitness = -1800547.0
+Generation 193: Best calculate_fitness = -1800547.0
+Regenerating population at generation 194 due to stagnation
+Generation 195: Best calculate_fitness = -1800547.0
+Generation 196: Best calculate_fitness = -1800547.0
+Generation 197: Best calculate_fitness = -1800547.0
+Generation 198: Best calculate_fitness = -1800547.0
+Regenerating population at generation 199 due to stagnation
+Best Solution: [0, 12, 7, 15, 18, 31, 28, 5, 3, 6, 9, 23, 22, 20, 1, 2, 10, 25, 13, 29, 11, 30, 8, 21, 4, 19, 14, 26, 17, 27, 16, 24]
+Total Distance: -1800547.0
