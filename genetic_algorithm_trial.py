@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import time  # Importing time module
 from genetic_algorithms_functions import calculate_fitness, \
     select_in_tournament, order_crossover, mutate, \
     generate_unique_population
@@ -25,6 +26,9 @@ population = generate_unique_population(population_size, num_nodes)
 # Initialize variables for tracking stagnation
 best_calculate_fitness = int(1e6)
 stagnation_counter = 0
+
+# Start the timer before the GA loop
+start_time = time.time()
 
 # Main GA loop
 for generation in range(num_generations):
@@ -80,3 +84,10 @@ best_idx = np.argmin(calculate_fitness_values)
 best_solution = population[best_idx]
 print("Best Solution:", best_solution)
 print("Total Distance:", calculate_fitness(best_solution, distance_matrix))
+
+# End the timer after the GA loop
+end_time = time.time()
+
+# Calculate and print the execution time
+execution_time = end_time - start_time
+print(f"Execution Time: {execution_time} seconds")
