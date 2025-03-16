@@ -11,14 +11,13 @@ The script `genetic_algorithm_trial.py` implements a **Genetic Algorithm (GA)** 
 
 1. **Loading the Distance Matrix**
    - The script reads the `city_distances.csv` file into a NumPy array.
-   - It preprocesses the distance matrix by replacing infeasible paths (`100000`) with `np.inf` to prevent invalid calculations.
 
 2. **Population Initialization**
    - A population of unique random routes is generated using `generate_unique_population()`, ensuring all routes start from node `0`.
    
 3. **Fitness Evaluation**
    - The `calculate_fitness()` function computes the total distance for each route.
-   - If a route is infeasible (due to `np.inf` distances), it is assigned a large penalty (`-1e5`).
+   - If a route is infeasible, it is assigned a large penalty (`-1e5`).
 
 4. **Tournament Selection**
    - The `select_in_tournament()` function selects individuals for crossover by running small tournaments and picking the best routes.

@@ -1,146 +1,58 @@
 # Parallel and Distributed Computing Assignment 🚀
 
-## Assignment Part 1 Overview 🔍
-This part evaluates various approaches for parallel computation by calculating the square of numbers using different techniques. The goal is to compare the performance of these methods on large datasets of 10^6 and 10^7 numbers.
-
-## Test Methodology 🧪
-I implemented the following methods to compute the square of numbers from a list of random integers:
-
-- **Sequential Execution**: 🐢
-  - A simple for loop that computes the square for each number sequentially.
-- **Multiprocessing (Individual Processes for Each Number)**: 🔄
-  - Spawns a new process for each number to compute its square.
-- **Multiprocessing Pool (map)**: 🏊‍♂️
-  - Uses a pool of worker processes to apply the square function in parallel to the list.
-- **Multiprocessing Pool (apply)**: 📝
-  - Similar to map(), but the function is applied to each number sequentially in a separate process.
-- **Concurrent.futures ProcessPoolExecutor**: ⚙️
-  - Uses the ProcessPoolExecutor from the concurrent.futures module to handle parallel execution.
-- **Asynchronous Testing**: ⏱️
-  - We tested both synchronous and asynchronous versions of the multiprocessing pool, particularly focusing on the difference between map() (synchronous) and map_async() (asynchronous).
-
-## Test Results 📊
-
-### For 10^6 Numbers:
-- **Sequential Execution**: ⏱️
-  - Execution time: 0.0543 seconds
-  - Execution time was minimal, as expected with a single-threaded approach.
-- **Multiprocessing (Individual Processes for Each Number)**: 🚶‍♂️🚶‍♀️
-  - Execution time: 0.0883 seconds
-  - Slightly faster than the sequential approach, but still incurs overhead due to process creation.
-- **Multiprocessing Pool (map)**: 🏆
-  - Execution time: 0.0832 seconds
-  - Considered the optimal solution for parallelization, significantly faster than sequential execution and multiprocessing with individual processes.
-- **Multiprocessing Pool (apply)**: 🐌
-  - Execution time: 161.9429 seconds
-  - Much slower compared to map(), as it spawns a separate process for each function call, leading to high overhead.
-- **ProcessPoolExecutor**: 🐢
-  - Execution time: 106.6540 seconds
-  - Performed slower than map() and similar to apply(), as it also involves overhead in task management.
-
-### For 10^7 Numbers:
-- **Sequential Execution**: ⏳
-  - Execution time: 0.5159 seconds
-  - Execution time increased linearly with the number of numbers.
-- **Multiprocessing (Individual Processes for Each Number)**: 🧵
-  - Execution time: 0.7827 seconds
-  - Slower compared to map() due to the overhead of spawning a large number of processes.
-- **Multiprocessing Pool (map)**: 🚀
-  - Execution time: 0.7932 seconds
-  - The most efficient solution, handling large datasets well.
-- **Multiprocessing Pool (map_async)**: 🚀💤
-  - Execution time: 0.7806 seconds
-  - No significant performance improvement over map(), but can be beneficial for more complex scenarios where other tasks can be performed while waiting for results.
-- **Multiprocessing Pool (apply)**: 🐢💤
-  - Execution time: 1676.2731 seconds
-  - Extremely slow due to the large overhead in creating separate processes for each number.
-- **ProcessPoolExecutor**: 🚶‍♂️
-  - Execution time: 1046.5371 seconds
-  - Slightly faster than apply() but still slower than map().
-
-## Conclusions 🧠
-
-### Best Method for Large Datasets: 🏆
-Multiprocessing Pool (map) is the most efficient method for parallel processing, particularly for handling large datasets (e.g., 10^6 and 10^7 numbers).
-
-### Worst Method for Large Datasets: 👎
-Multiprocessing Pool (apply) is inefficient for large numbers due to its high overhead of creating processes for each task.
-
-### Synchronous vs Asynchronous: ⚖️
-Asynchronous map_async() did not show a significant performance improvement over synchronous map(), but it can be useful in more complex workflows involving I/O-bound tasks.
-
-## Performance Insights 💡
-
-### Overhead of Process Creation: ⚠️
-Methods like individual processes and apply() are highly inefficient for large datasets because they create a separate process for each computation, leading to excessive overhead.
-
-### Parallel Pooling (map and map_async): 🌊
-map() offers an efficient way to parallelize tasks without introducing too much overhead. map_async() can be beneficial when tasks are I/O-bound or require non-blocking operations, but in this case, its impact was minimal.
-
-_________________________________________________________________________
-
 ## Assignment Part 2 Overview 🔍
-This task demonstrates the use of semaphores in Python's `multiprocessing` module to manage access to a limited pool of resources, specifically simulating a pool of database connections. The goal is to simulate multiple processes attempting to access a shared resource (the connection pool), using a semaphore to control access and ensure safe synchronization. 🔐
+The assignment focuses on optimizing delivery routes using a genetic algorithm (GA) with MPI4PY or Celery for distributed computing. The task involves completing and implementing GA functions like fitness calculation and tournament selection to minimize the total distance in a single vehicle’s route across a city represented by a distance matrix. The assignment also requires parallelizing the GA to run on multiple machines, enhancing its performance, and testing it on a larger scale with more cars and nodes. Finally, performance metrics and improvements are compared before and after parallelization and enhancements.
 
-## Requirements 📝
 
-### 1. Connection Pool Class 🔄
-* A `ConnectionPool` class was implemented that uses a semaphore to manage access to a limited number of connections.
-* The class includes methods to:
-   * **Acquire a connection**: Process waits for and acquires a connection if available. ⏳
-   * **Release a connection**: Process releases a connection back to the pool after completing its task. 🔄
+### 5.d. Explain and Run the Algorithm (5 pts)
 
-### 2. Database Operation Simulation 🗃️
-* A function simulates a process performing a database operation by:
-   * Acquiring a connection. 🖥️
-   * Performing some work (simulated by a random sleep). 💤
-   * Releasing the connection after finishing the task. ✔️
+#### **Explanation of `genetic_algorithm_trial.py`**
+The script `genetic_algorithm_trial.py` implements a **Genetic Algorithm (GA)** to optimize a fleet management routing problem. The algorithm aims to find the shortest possible route for a vehicle to visit multiple locations and return to the starting point. Below is a breakdown of its key components:
 
-### 3. Multiprocessing Setup ⚙️
-* Multiple processes (5 in total) are created to simulate concurrent database access. 💼
-* The semaphore limits the number of processes that can access the pool at any given time (3 connections in this case). 🔢
-* The program prints messages indicating the state of each process (waiting, acquired, or released a connection). 🖨️
+1. **Loading the Distance Matrix**
+   - The script reads the `city_distances.csv` file into a NumPy array.
 
-## Output 📊
-When the script is executed, the output demonstrates the process behavior:
-* **Process waiting** for a connection to be available. 🕒
-* **Process acquiring** a connection once it's free. 🔓
-* **Process releasing** the connection back to the pool after finishing the task. 🔁
+2. **Population Initialization**
+   - A population of unique random routes is generated using `generate_unique_population()`, ensuring all routes start from node `0`.
+   
+3. **Fitness Evaluation**
+   - The `calculate_fitness()` function computes the total distance for each route.
+   - If a route is infeasible, it is assigned a large penalty (`-1e5`).
 
-### Full Output Example:
+4. **Tournament Selection**
+   - The `select_in_tournament()` function selects individuals for crossover by running small tournaments and picking the best routes.
 
-```
-Process 61 waiting for a connection... 
-Acquired Connection-2 
-Process 61 working with Connection-2... 
-Process 64 waiting for a connection... 
-Acquired Connection-2 
-Process 64 working with Connection-2... 
-Process 79 waiting for a connection... 
-Acquired Connection-2 
-Process 79 working with Connection-2... 
-Process 17 waiting for a connection... 
-Process 29 waiting for a connection... 
-Released Connection-2 
-Process 64 finished with Connection-2 
-Acquired Connection-2 
-Process 17 working with Connection-2... 
-Released Connection-2 
-Process 79 finished with Connection-2 
-Acquired Connection-2 
-Process 29 working with Connection-2... 
-Released Connection-2 
-Process 61 finished with Connection-2 
-Released Connection-2 
-Process 17 finished with Connection-2 
-Released Connection-2 
-Process 29 finished with Connection-2
+5. **Crossover and Mutation**
+   - `order_crossover()` generates new routes by combining parts of two parent routes.
+   - `mutate()` introduces slight modifications by swapping two random locations in a route with a certain probability.
+
+6. **Stagnation Handling**
+   - If the best fitness score does not improve for 5 consecutive generations, the population is regenerated to avoid premature convergence.
+
+7. **Main Loop Execution**
+   - The GA runs for `200` generations, continuously evolving better solutions.
+   - At the end, the script prints the best-found solution and its total travel distance.
+
+---
+
+#### **Running and Timing the Script**
+To measure the execution time of `genetic_algorithm_trial.py`, the following Python script was used:
+
+```python
+import time
+
+start_time = time.time()  # Start timer
+
+# Run the genetic algorithm script
+exec(open("genetic_algorithm_trial.py").read())  
+
+end_time = time.time()  # End timer
+
+print(f"Execution Time: {end_time - start_time:.2f} seconds")
 ```
 
-## Observations 👀
+**Execution Results:**
+After running the script, the best solution (optimal route) and its total distance were displayed. Additionally, the execution time was measured and printed.
 
-### 1. **What happens if more processes try to access the pool than there are available connections?**
-   * Processes will wait in a queue until a connection is released by another process. Only a fixed number of processes can access the pool at the same time. 🕰️
+This confirms that the genetic algorithm successfully finds an optimized route while adapting through selection, crossover, and mutation.
 
-### 2. **How does the semaphore prevent race conditions and ensure safe access to the connections?**
-   * The semaphore limits the number of processes that can acquire a connection at the same time. It ensures that once the maximum number of processes is reached, additional processes must wait for a connection to be released, preventing race conditions. 🚫

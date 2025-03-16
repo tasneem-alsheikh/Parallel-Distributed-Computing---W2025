@@ -1,20 +1,5 @@
 import numpy as np
 
-
-def preprocess_distance_matrix(distance_matrix):
-    """
-    Replace infeasible distances (100000) with np.inf to prevent invalid calculations.
-
-    Parameters:
-        - distance_matrix (numpy.ndarray): The original distance matrix.
-
-    Returns:
-        - numpy.ndarray: The modified distance matrix.
-    """
-    distance_matrix = np.where(distance_matrix == 100000, np.inf, distance_matrix)
-    return distance_matrix
-
-
 def calculate_fitness(route, distance_matrix):
     """
     Calculate total distance traveled by the car. Penalizes infeasible routes.
@@ -30,6 +15,10 @@ def calculate_fitness(route, distance_matrix):
     total_distance = 0
     num_nodes = len(route)
 
+    # Ensure that the route has unique nodes, except for the first node (fixed at index 0)
+    if len(set(route)) != num_nodes:
+        return -1e5  # Return a large penalty for invalid route (duplicate nodes)
+
     for i in range(num_nodes - 1):
         distance = distance_matrix[route[i], route[i + 1]]
         if np.isinf(distance):  # Infeasible route
@@ -37,14 +26,14 @@ def calculate_fitness(route, distance_matrix):
 
         total_distance += distance
 
-    # Add return distance
+    # Add return distance (i.e., from last node to the start)
     last_leg = distance_matrix[route[-1], route[0]]
     if np.isinf(last_leg):
         return -1e5  # Large penalty
 
     total_distance += last_leg
 
-    return -total_distance  # Negative because we minimize distance
+    return total_distance
 
 
 def select_in_tournament(population, scores, number_tournaments=4, tournament_size=3):
@@ -63,7 +52,7 @@ def select_in_tournament(population, scores, number_tournaments=4, tournament_si
     selected = []
     
     for _ in range(number_tournaments):
-        idx = np.random.choice(len(population), tournament_size, replace=True)  # Allow replacement
+        idx = np.random.choice(len(population), tournament_size, replace=False)  # No replacement in a tournament
         best_idx = idx[np.argmin(scores[idx])]  # Select the individual with the best (lowest) score
         selected.append(population[best_idx])
     
