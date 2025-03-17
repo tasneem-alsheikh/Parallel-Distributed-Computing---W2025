@@ -77,18 +77,18 @@ ________________________________________________________________________________
 ### Q&A 7
 
 **Proposed Improvements:**
-**Adaptive Crossover Rate**: Adjust the crossover rate based on the generation number, favoring exploration early on and focusing more on exploitation later.
-**Diversity Maintenance**: Introduce techniques like fitness sharing or crowding to preserve genetic diversity and avoid premature convergence.
-**Parallelize 2-opt Search**: Parallelize the 2-opt local search by applying it across multiple machines to speed up refinement.
-**Dynamic Stagnation Check**: Instead of a fixed stagnation limit, dynamically adjust it based on population diversity and fitness changes.
-**Efficient Elite Retention**: Implement truncation selection to keep only the best individuals in the population, optimizing elite retention.
+**Adaptive Crossover Rate**: Adjust the crossover rate based on the generation number, favoring exploration early on and focusing more on exploitation later.<br>
+**Diversity Maintenance**: Introduce techniques like fitness sharing or crowding to preserve genetic diversity and avoid premature convergence.<br>
+**Parallelize 2-opt Search**: Parallelize the 2-opt local search by applying it across multiple machines to speed up refinement.<br>
+**Dynamic Stagnation Check**: Instead of a fixed stagnation limit, dynamically adjust it based on population diversity and fitness changes.<br>
+**Efficient Elite Retention**: Implement truncation selection to keep only the best individuals in the population, optimizing elite retention.<br>
 
 **Run your code and compute the performance metrics.**
 
-A: 
-**Total Distance**: 1131.0
-**Execution Time**: 31.834239721298218 seconds
-- **Performance Metrics**: Speedup: 1.91, Efficiency: 0.955
+A: <br>
+**Total Distance**: 1131.0<br>
+**Execution Time**: 31.834239721298218 seconds<br>
+- **Performance Metrics**: Speedup: 1.91, Efficiency: 0.955<br>
 
 ________________________________________________________________________________________________________________________________________________________________________________
 
@@ -97,16 +97,16 @@ ________________________________________________________________________________
 
 ### Q&A 8
 
-**Run the program using the extended city map: city_distances_extended.csv**
+**Run the program using the extended city map: city_distances_extended.csv**<br>
 
-A:
-**Best Solution**: [0, 81, 99, 98, 63, 52, 75, 59, 69, 77, 1, 21, 83, 95, 50, 11, 72, 65, 20, 55, 96, 46, 60, 16, 97, 91, 33, 23, 25, 82, 9, 26, 88, 40, 5, 32, 43, 28, 79, 57, 18, 90, 74, 86, 89, 93, 2, 70, 42, 44, 58, 80, 45, 54, 36, 29, 14, 68, 92, 41, 31, 38, 49, 30, 37, 35, 6, 66, 78, 19, 13, 51, 7, 4, 53, 17, 73, 22, 12, 34, 10, 15, 84, 27, 39, 62, 48, 61, 8, 94, 67, 47, 85, 71, 56, 76, 24, 3, 87, 64]
-**Total Distance**: 205131.0
-**Execution Time**: 89.06501793861389 seconds
+A:<br>
+**Best Solution**: [0, 81, 99, 98, 63, 52, 75, 59, 69, 77, 1, 21, 83, 95, 50, 11, 72, 65, 20, 55, 96, 46, 60, 16, 97, 91, 33, 23, 25, 82, 9, 26, 88, 40, 5, 32, 43, 28, 79, 57, 18, 90, 74, 86, 89, 93, 2, 70, 42, 44, 58, 80, 45, 54, 36, 29, 14, 68, 92, 41, 31, 38, 49, 30, 37, 35, 6, 66, 78, 19, 13, 51, 7, 4, 53, 17, 73, 22, 12, 34, 10, 15, 84, 27, 39, 62, 48, 61, 8, 94, 67, 47, 85, 71, 56, 76, 24, 3, 87, 64]<br>
+**Total Distance**: 205131.0<br>
+**Execution Time**: 89.06501793861389 seconds<br>
 
 
 **How would you add more cars to the problem?**
-A:
+A:<br>
 To add more cars (vehicles) to the problem, I would treat each car as a separate route within the population. This essentially turns the problem into a "multiple traveling salesman problem" (mTSP). I’d need to adjust the algorithm so that it optimizes the routes for multiple vehicles at once, ensuring each vehicle starts at the depot and covers a different subset of cities without overlapping. I would modify the fitness function to account for the multiple vehicles and distribute the cities among the cars accordingly.
 
 
