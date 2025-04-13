@@ -394,7 +394,7 @@ Explorer 3: Time = 0.00s, Moves = 128, Backtracks = 1023
 - Why It's Better: Stops all loops, with 1023 backtracks showing it's thorough—keeps moves low!
 
 ### Why It's Smarter
-A* is like a GPS, cutting moves to 128. Visited tracking is a memory boost, stopping loops with style! 🌟
+A* was used in the assignment to optimize the explorer’s pathfinding, reducing the 1279 moves by prioritizing paths with a heuristic that estimates the distance to the goal. The visited set prevented redundant exploration, maintaining efficiency with 0 backtracks. This made the explorer smarter by finding shorter paths in a complex environment.
 
 ## Question 5: Comparing Original and Enhanced Explorers ⚖️
 ### What I Did
