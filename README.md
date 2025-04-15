@@ -2,13 +2,14 @@
 *By Tasneem Al Sheikh*
 
 Below are my solutions for Assignment 2. I've worked hard to make everything clear and efficient, and I hope you enjoy reading through my progress! 😊
+Note: I made a subdirectory of the repository, and any code modified was put in this readme.md along with the results.
 
 ## Question 1: How the Automated Maze Explorer Works ✨
 Here's how the original maze explorer operates
 
 ### The Algorithm Used
 - The explorer uses the right-hand rule algorithm. It starts facing right and tries moves in this order: turn right and move, go straight, turn left, or turn around.
-- It keeps going until it reaches the end. When I ran it with visualization, I noticed it sticks to walls, always favoring right turns first—so neat to watch!
+- It keeps going until it reaches the end. When I ran it with visualization, I noticed it sticks to walls, always favoring right turns first.
 
 ### Handling Loops
 - It tracks the last three moves in move_history to spot loops. If it's stuck (same spot three times), is_stuck() it backtracks.
