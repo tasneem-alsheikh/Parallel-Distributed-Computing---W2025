@@ -2,7 +2,7 @@
 
 Welcome to the repository for **DSAI3202: Parallel & Distributed Computing**.
 
-This repository contains all course-related materials, including lecture notes, lab assignments, code examples, and additional resources to support your learning.
+This repository includes lecture notes, labs, and assignments that reflect my learning and understanding of the concepts taught in DSAI3202.
 
 ## 📁 Contents
 
