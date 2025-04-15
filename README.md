@@ -8,12 +8,11 @@ This repository contains all course-related materials, including lecture notes, 
 
 - 📘 Lecture slides & notes  
 - 🧪 Lab exercises & solutions  
-- 💻 Sample code and project files  
-- 📂 Resources and references
+- 💻 Assignments and project files  
 
 ## 🎯 Purpose
 
-This repository serves as a central hub for students enrolled in **DSAI3202** to access materials, collaborate, and stay organized throughout the course.
+This repository is a comprehensive record of my work in **DSAI3202**, maintained to stay organized and document my learning journey throughout the course.
 
 ---
 
