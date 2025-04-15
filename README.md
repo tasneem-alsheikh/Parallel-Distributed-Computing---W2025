@@ -1,8 +1,8 @@
 # Assignment 2: Maze Runner 🌟
 *By Tasneem Al Sheikh*
 
-Below are my solutions for Assignment 2. I've worked hard to make everything clear and efficient, and I hope you enjoy reading through my progress! 😊<br>
-Note: I made a subdirectory of the repository, and any code modified was put in this readme.md along with the results.
+Below are my solutions for Assignment 2. I've worked hard to make everything clear and efficient, and I hope you enjoy reading through my progress! 😊<br><br>
+*Note: I made a subdirectory of the repository, and any code modified was put in this readme.md along with the results.*
 
 ## Question 1: How the Automated Maze Explorer Works ✨
 Here's how the original maze explorer operates
